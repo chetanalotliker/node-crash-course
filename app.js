@@ -24,9 +24,9 @@ app.use(morgan('dev'));
 // mongoose and mongo sandbox 
 app.get('/add-blog',(req,res)=>{
   const blog = new Blog({
-    title: 'new blog',
-    snippet: 'about my new blog',
-    body:'more about my new blog'
+    title: 'new aa',
+    snippet: 'new site',
+    body:'more info'
   });
 
   blog.save()
@@ -71,12 +71,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  const blogs = [
-    {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
-    {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
-    {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'},
-  ];
-  res.render('index', { title: 'Home', blogs });
+  res.redirect('/blogs')
 });
 
 app.use((req, res, next) => {
@@ -86,6 +81,17 @@ app.use((req, res, next) => {
 
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
+});
+
+//blog routes 
+app.get('/blogs',(req,res)=>{
+  Blog.find()
+  .then((result)=>{
+    res.render('index',{title:'All Blogs', blogs: result})
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
 });
 
 app.get('/blogs/create', (req, res) => {
