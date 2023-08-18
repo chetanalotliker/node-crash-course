@@ -21,6 +21,10 @@
 
 - npm install ejs
 
+## install morgan
+
+- npm install morgan
+
 ## to start the server
 
 -- nodemon server
