@@ -8,6 +8,14 @@
 - npm i -g npm
 - npm i --save lodash
 
+## install express
+
+- npm install express
+
+## install ejs
+
+- npm install ejs
+
 ## to start the server
 
 -- nodemon server
