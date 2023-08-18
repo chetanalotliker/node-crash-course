@@ -1,9 +1,16 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+const Blog = require('./models/blog');
 
 // express app
 const app = express();
 
+// connect to mongo db 
+const dbURI = 'mongodb://localhost:27017/node-tuts';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
+.then((result)=>console.log('connected to db'))
+.catch((err)=> console.log(err))
 // listen for requests
 app.listen(3000);
 
@@ -12,7 +19,44 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
+app.use(morgan('dev'));
 
+// mongoose and mongo sandbox 
+app.get('/add-blog',(req,res)=>{
+  const blog = new Blog({
+    title: 'new blog',
+    snippet: 'about my new blog',
+    body:'more about my new blog'
+  });
+
+  blog.save()
+  .then((result)=>{
+    res.send(result)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+})
+
+app.get('/all-blogs',(req,res)=>{
+  Blog.find()
+  .then((result)=>{
+    res.send(result);
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+});
+
+app.get('/single-blog',(req,res)=>{
+  Blog.findById('64dfa4657bbf9ab6db5e011f')
+  .then((result)=>{
+    res.send(result)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+});
 app.use((req, res, next) => {
   console.log('new request made:');
   console.log('host: ', req.hostname);
@@ -20,10 +64,6 @@ app.use((req, res, next) => {
   console.log('method: ', req.method);
   next();
 });
-
-
-
-app.use(morgan('dev'));
 
 app.use((req, res, next) => {
   res.locals.path = req.path;
