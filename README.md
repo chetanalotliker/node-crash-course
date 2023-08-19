@@ -13,7 +13,7 @@
 
 # Getting Started with Running the Application
 
-- Clone the project https://github.com/chetanalotliker/node-crash-course
+- Clone the project https://github.com/chetanalotliker/node-crash-course.git
 - Do npm install
 
 ## to start the server
