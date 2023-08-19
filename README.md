@@ -2,9 +2,8 @@
 
 - This is a node js application created using ejs.
   Below youtube is refered to create this application.
-
 - Reference Youtube Video: https://www.youtube.com/watch?v=zb3Qk8SG5Ms
-  Github Repo Reference Link: https://github.com/iamshaunjp/node-crash-course
+- Github Repo Reference Link: https://github.com/iamshaunjp/node-crash-course
 
 # Database configurations
 
