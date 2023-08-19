@@ -1,10 +1,10 @@
 # Node Crash Course
 
-This is a node js application created using ejs.
-Below youtube is refered to create this application.
+- This is a node js application created using ejs.
+  Below youtube is refered to create this application.
 
-Reference Youtube Video: https://www.youtube.com/watch?v=zb3Qk8SG5Ms
-Github Repo Reference Link: https://github.com/iamshaunjp/node-crash-course
+- Reference Youtube Video: https://www.youtube.com/watch?v=zb3Qk8SG5Ms
+  Github Repo Reference Link: https://github.com/iamshaunjp/node-crash-course
 
 # Database configurations
 
@@ -19,7 +19,7 @@ Github Repo Reference Link: https://github.com/iamshaunjp/node-crash-course
 
 ## to start the server
 
--- nodemon server
+- nodemon server
 
 # One time intallations done (No need to repeat these steps). This is just for reference.
 
