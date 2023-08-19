@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "64e0679a434a48c7e40bc729"
+  },
+  "title": "my first blog",
+  "snippet": "Blog snippet",
+  "body": "This is the description",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1692428186150"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1692428186150"
+    }
+  },
+  "__v": 0
+}]
